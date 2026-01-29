@@ -1,0 +1,22 @@
+#************************** makefile for cmd\... ***************************
+
+msg	=..\..\messages
+dos	=..\..\dos
+inc	=..\..\inc
+hinc	=..\..\h
+
+#
+#######################	dependencies begin here. #########################
+#
+
+all: mouse.com
+
+
+mouse.obj: mouse.asm
+          tasm mouse;
+
+mouse.com: mouse.obj
+	tlink /t mouse;
+	upx --8086 MOUSE.COM
+	del *.obj
+	del *.map
