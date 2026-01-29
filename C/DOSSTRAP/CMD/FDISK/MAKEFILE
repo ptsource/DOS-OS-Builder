@@ -1,0 +1,17 @@
+#************************** makefile for cmd\... ***************************
+
+dos	=..\..\dos
+inc	=..\..\inc
+hinc	=..\..\h
+
+#
+#######################	dependencies begin here. #########################
+#
+
+all: fdisk.exe
+
+
+fdisk.exe: fdisk.cpp
+         tcc fdisk.cpp
+         upx --8086 FDISK.EXE
+         del *.obj
