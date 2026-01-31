@@ -1,0 +1,68 @@
+
+CFLAGS=-w- -a -d -G -O -Z -ms -DEXPORT
+UTILFLAGS=-DUTIL $(CFLAGS) -o
+ASFLAGS=-ml -t -DDYN_ALLOC
+
+# variables
+OBJZ = zip.obj zipfile.obj zipup.obj fileio.obj util.obj tempf.obj shrink.obj\
+ globals.obj
+OBJI = implode.obj im_lmat.obj im_ctree.obj im_bits.obj im_lm.obj
+
+
+all:	zip.exe
+
+zip.obj:	zip.h ziperr.h tailor.h zip.c
+	tcc -c $(CFLAGS) $*.c
+
+zipfile.obj:	zip.h ziperr.h tailor.h zipfile.c
+	tcc -c $(CFLAGS) $*.c
+
+zipup.obj:	zip.h ziperr.h tailor.h zipup.c
+	tcc -c $(CFLAGS) $*.c
+
+fileio.obj:	zip.h ziperr.h tailor.h fileio.c
+	tcc -c $(CFLAGS) $*.c
+
+util.obj:	zip.h ziperr.h tailor.h util.c
+	tcc -c $(CFLAGS) $*.c
+
+tempf.obj:	tempf.h tailor.h tempf.c
+	tcc -c $(CFLAGS) $*.c
+
+shrink.obj:	zip.h ziperr.h tempf.h tailor.h shrink.c
+	tcc -c $(CFLAGS) $*.c
+
+globals.obj:	zip.h ziperr.h tailor.h globals.c
+	tcc -c $(CFLAGS) $*.c
+
+implode.obj:	implode.h crypt.h ziperr.h tempf.h tailor.h implode.c
+	tcc -c $(CFLAGS) $*.c
+
+im_lmat.obj:	implode.h crypt.h ziperr.h tempf.h tailor.h im_lmat.c
+	tcc -c $(CFLAGS) $*.c
+
+im_lm.obj:	im_lm.asm
+	tasm $(ASFLAGS) im_lm;
+
+im_ctree.obj:	implode.h crypt.h ziperr.h tempf.h tailor.h im_ctree.c
+	tcc -c $(CFLAGS) $*.c
+
+im_bits.obj:	implode.h crypt.h ziperr.h tempf.h tailor.h im_bits.c
+	tcc -c $(CFLAGS) $*.c
+
+zipfile_.obj:	zipfile.c zip.h
+	tcc -c $(UTILFLAGS)$* zipfile.c
+
+zipup_.obj:	zipup.c zip.h
+	tcc -c $(UTILFLAGS)$* zipup.c
+
+fileio_.obj:	fileio.c zip.h
+	tcc -c $(UTILFLAGS)$* fileio.c
+
+zip.exe: $(OBJZ) $(OBJI)
+	echo $(OBJZ) > zip.rsp
+	echo $(OBJI) >> zip.rsp
+	tcc -ms @zip.rsp
+	del zip.rsp
+	upx --8086 ZIP.EXE
+	del *.obj
