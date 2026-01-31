@@ -1,0 +1,22 @@
+#************************** makefile for cmd\... ***************************
+
+dos	=..\..\dos
+inc	=..\..\inc
+hinc	=..\..\h
+
+#
+#######################	dependencies begin here. #########################
+#
+
+all: ansi.sys
+
+
+ansi.sys:
+	 masm ansi;
+         masm ansi_p;
+         masm ansi_f;
+         masm ansi_i;
+         link ansi+ansi_p+ansi_f+ansi_i;
+         exe2bin ansi.exe ansi.sys
+         del ansi.exe
+	 del *.obj
