@@ -5,6 +5,9 @@ make	=nmake
 all:
 	cd country
 	$(make)
+	cd ..\ansi
+	del *.sys
+	$(make)
 	cd ..\keyboard
 	$(make)
 	cd ..\display
