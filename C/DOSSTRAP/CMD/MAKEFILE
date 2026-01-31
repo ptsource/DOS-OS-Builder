@@ -125,5 +125,8 @@ all:
 	cd ..\xdir
 	del *.com
 	$(make)
+	cd ..\zip
+	del *.exe
+	$(make)
 	cd ..
 
