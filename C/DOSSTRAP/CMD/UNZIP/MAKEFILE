@@ -1,0 +1,52 @@
+
+MODEL=L
+CC = cl
+CFLAGS = -nologo -W0 -DMSC -Oait -Gs -I.
+
+LD = link
+LDFLAGS = /noi/e/st:0x0c00
+LDFLAGS2 = ,$*;
+
+OBJS1 = unzip.obj envargs.obj explode.obj extract.obj file_io.obj
+OBJS2 = inflate.obj match.obj unreduce.obj unshrink.obj zipinfo.obj
+OBJS3 = msdos.obj
+OBJS = $(OBJS1) $(OBJS2) $(OBJS3)
+
+
+
+all:  unzip.exe
+
+.c.obj:
+        $(CC) -c -A$(MODEL) $(CFLAGS) $*.c
+
+envargs.obj:      envargs.c unzip.h
+
+explode.obj:      explode.c unzip.h
+
+extract.obj:      extract.c unzip.h crypt.h
+
+file_io.obj:      file_io.c unzip.h crypt.h tables.h
+
+inflate.obj:      inflate.c unzip.h
+
+match.obj:        match.c unzip.h
+
+msdos.obj:        msdos.c unzip.h
+        $(CC) -c -A$(MODEL) $(CFLAGS) msdos.c
+
+unreduce.obj:     unreduce.c unzip.h
+
+unshrink.obj:     unshrink.c unzip.h
+
+unzip.obj:        unzip.c unzip.h
+
+zipinfo.obj:      zipinfo.c unzip.h
+
+unzip.exe:      $(OBJS)
+	echo $(OBJS1)+ > unzip.rsp
+	echo $(OBJS2)+ >> unzip.rsp
+	echo $(OBJS3); >> unzip.rsp
+	$(LD) $(LDFLAGS) @unzip.rsp
+	del unzip.rsp
+	upx --8086 UNZIP.EXE
+	del *.obj
