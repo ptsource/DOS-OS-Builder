@@ -105,6 +105,9 @@ all:
 	cd ..\fdisk
 	del *.exe
 	$(make)
+	cd ..\unzip
+	del *.exe
+	$(make)
 	cd ..\replace
 	$(make)
 	cd ..\graftabl
