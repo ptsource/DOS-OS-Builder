@@ -56,7 +56,7 @@ A Boot Image is provided in the repository BOOT.IMG, this image contains the com
 
 ## Applications
 
-PTSource X86 DOS OS Builder uses the Microsoft DOS open-source codebase wich is based on MS-DOS 4.0, despite that almost all not too complex DOS applications will run with no hassle, its up to you to make a test and see. Applications can be added to the image using the above method. If you want a Norton Commander style shell occupying just 13KB of memory (the one used on the preview) you can get [Wee Commander here](https://ko-fi.com/s/8df79a705d).
+PTSource X86 DOS OS Builder uses the Microsoft DOS open-source codebase wich is based on MS-DOS 4.0, despite that almost all not too complex DOS applications will run with no hassle, its up to you to make a test and see. Applications can be added to the image using the above method. If you want a Norton Commander style shell occupying just 13KB of memory (the one used on the preview) you can get [Wee Commander here](https://ko-fi.com/s/8df79a705d). For a continued updated list of applications for DOS go [here](https://store.ptsource.eu/files_16bits).
 
 ## MiniVM Booting
 
@@ -76,6 +76,7 @@ This example use case allows you to have a CP/M-80 System using only ALIAS, [ZRU
 *  Add the CPM programs you like changing the extension from .COM to .CPM.
 *  Edit AUTOEXEC.BAT and use ALIAS to prepare your commands.
 *  Close the image, boot and issue your ALIAS defined commands.
+*  For a continued updated list of applications for CPM go [here](https://store.ptsource.eu/files_8bits).
 
 ## Homepage
 
