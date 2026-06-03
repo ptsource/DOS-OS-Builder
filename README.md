@@ -80,6 +80,10 @@ This example use case allows you to have a CP/M-80 System using only ALIAS, [ZRU
 
 ## Homepage
 
-[![Visit homepage.](/images/homepage-here-yellowgreen.svg)](https://wiki.ptsource.eu/)
+[![Visit homepage.](/images/homepage-here-yellowgreen.svg)](https://wiki.ptsource.eu/soft/x86dososbuilder/start)
+
+<p align="center" width="100%">
+    <a href="https://store.ptsource.eu/soft/x86dososbuilder/start" target="_blank"><img src="/images/bannerx86dosbuilder.png" alt="PTSource X86 DOS OS Builder"></a> 
+</p>
 
 
