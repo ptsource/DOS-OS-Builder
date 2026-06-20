@@ -78,7 +78,7 @@ This example use case allows you to have a CP/M-80 System using only ALIAS, [ZRU
 *  Close the image, boot and issue your ALIAS defined commands.
 *  For a continued updated list of applications for CPM go [here](https://store.ptsource.eu/files_8bits).
 
-## Support for LiberDOS
+## LiberDOS Toolchain Support
 PTSource X86 DOS OS Builder can be used to build a full toolchain for the [LiberDOS Project](https://github.com/libersoft-org/liberdos). To do that you just have to edit 2 files. VERSIONINC.H in the H folder and change the expected_version_major to 5 and VERSIONA.INC in the INC folder and change major_version to 5. After build you should have a complete toolchain for the [LiberDOS Project](https://github.com/libersoft-org/liberdos).
 
 ## Homepage
