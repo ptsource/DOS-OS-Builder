@@ -41,7 +41,7 @@ $M_B_00007H_END LABEL BYTE
   
 $M_B_00008H_MSG LABEL BYTE
         DB      $M_B_00008H_END-$M_B_00008H_MSG-1
-        DB      "Incorrect DOS version",CR,LF
+        DB      "Visit us at www.wiki.ptsource.eu.",CR,LF
 $M_B_00008H_END LABEL BYTE
   
 $M_B_00009H_MSG LABEL BYTE
