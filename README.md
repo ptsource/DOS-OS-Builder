@@ -78,6 +78,8 @@ This example use case allows you to have a CP/M-80 System using only ALIAS, [ZRU
 *  Close the image, boot and issue your ALIAS defined commands.
 *  For a continued updated list of applications for CPM go [here](https://store.ptsource.eu/files_8bits).
 
+## Support for LiberDOS
+
 ## Homepage
 
 [![Visit homepage.](/images/homepage-here-yellowgreen.svg)](https://wiki.ptsource.eu/soft/x86dososbuilder/start)
