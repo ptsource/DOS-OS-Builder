@@ -1,6 +1,5 @@
-
-major_version	    equ     7	    ;Major DOS version 7 Standard
-;major_version	    equ     5	    ;Major DOS version 5 for LiberDOS
+major_version	    equ     7	    ;Major DOS version 7
+;major_version	    equ     5	    ;Major DOS version 5
 minor_version	    equ     00	    ;Minor DOS Version
 
 expected_version    equ     (MINOR_VERSION SHL 8)+MAJOR_VERSION
